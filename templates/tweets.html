@@ -1,0 +1,75 @@
+$def with (mid)
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>
+            Simple Sina Weibo Visualization Timeline|Geomap|SpreadNetwork
+        </title>
+        <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAASI0kCI-azC8RgbOZzWc3VRRarOQe_TKf_51Omf6UUSOFm7EABRRhO0PO4nBAO9FCmVDuowVwROLo3w"
+        type="text/javascript">
+        </script>
+        <script src="static/lib/timeline-2.3.0.js" type="text/javascript">
+        </script>
+        <script src="static/lib/json2.pack.js" type="text/javascript">
+        </script>
+        <script src="static/lib/timemap.js" type="text/javascript">
+        </script>
+        <script src="static/lib/json.js" type="text/javascript">
+        </script>
+        <script type="text/javascript">
+            var tm;
+            function onLoad() {
+                tm = TimeMap.init({
+                    mapId: "map",
+                    timelineId: "timeline",
+                    options: {
+                        eventIconPath: "static/images/"
+                    },
+                    datasets: [{
+                        id: "artists",
+                        title: "Artists",
+                        theme: "orange",
+                        type: "json_string",
+                        options: {
+                            url: "static/timemap2.json"
+                        }
+                    }],
+                    bandIntervals: [Timeline.DateTime.MINUTE, Timeline.DateTime.HOUR]
+                })
+            }
+        </script>
+        <link href="static/examples.css" type="text/css" rel="stylesheet"
+        />
+        <style>
+            div#timelinecontainer{height:300px}div#mapcontainer{height:300px}
+        </style>
+    </head>
+    
+    <body onload="onLoad();" onunload="GUnload();">
+        <div id="help">
+            <h1>
+                Timeline and Geo Map for message <br/>$mid
+            </h1>
+            Timeline and Geo Map showed below. You can drag it to see more.
+        </div>
+        <div id="timemap">
+            <div id="timelinecontainer">
+                <div id="timeline">
+                </div>
+            </div>
+            <div id="mapcontainer">
+                <div id="map">
+                </div>
+            </div>
+        </div>
+        <h1>
+            Timeline Spread Network for message <br/>$mid
+        </h1>
+        Demo Data for Steve Ma coming on stage.
+        </div>
+        <div class="image">
+        </div>
+    </body>
+</html>

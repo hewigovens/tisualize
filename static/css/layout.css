@@ -1,0 +1,106 @@
+p.title{
+	font-size:36px;
+    color:#1F81C6;
+}
+
+p.content{
+	font-size: 22px;
+	margin-left: -335px;
+    margin-bottom:12px;
+}
+
+a{
+	font-size:18px;
+}
+
+a.white{
+	color:#ffffff;
+}
+
+a.black{
+	color:#666666;
+}
+
+a.red{
+    color:#ff0000
+}
+
+input.text {
+    border: 1px solid black;
+    font-size: 28px;
+    width: 500px;
+}
+
+input.button {
+    font-size: 18px;
+    height: 40px;
+    position: relative;
+    top: -2px;
+    width: 100px;
+}
+
+form.edit_input{
+	margin-top: 60px;
+}
+
+table.hot_list{
+    
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width:780px;
+    font-size:12px;
+    height:220px;
+    
+}
+.table-title{left: 90px;position: absolute;top:260px; font-size:14px; color:#037CC7;font-weight:bold;}
+.table-panel{    height:200px;
+    overflow-y:scroll;
+        left: 88px;
+    position: absolute;
+    top: 300px;
+    width:802px;
+    height:220px;
+    overflow-x:hidden;
+     overflow-y:scroll;
+     border: 1px solid #C1C1c1;
+
+}
+table.hot_list td{border:1px solid #c1c1c1; border-bottom:none;border-right:none;}
+div.content{width:220px; overflow-x:hidden;white-space:nowrap;}
+div.content:hover{background:#ccc;}
+
+body {
+    /*color: #222222;*/
+	background-color:#222222;
+    font: 62.5%/1.5 "Trebuchet MS",Tahoma,Verdana,sans-serif;
+}
+
+div#list_top {
+    height: 600px;
+    padding: 0px;
+    width: 965px;
+	background-color:#ffffff;
+    position: relative;
+}
+
+div#title{
+	margin-left:-520px;
+    position:relative;
+}
+
+div#bottom {
+    height: 106px;
+    width: 965px;
+}
+
+div#user_info{
+    margin-left:1320px;
+    padding:0px;
+    position:absolute;
+    top:20px;
+}
+div#usage_info{
+    position:absolute;
+    left:180px;
+}

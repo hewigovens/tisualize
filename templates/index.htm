@@ -1,0 +1,72 @@
+$def with (screen_name,user_id,hot_list)
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Tisualize</title>
+	<link href="static/css/layout.css" rel="stylesheet" type="text/css">
+	<script src="static/js/index.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<center>
+	<div id="list_top">
+		<div id="title">
+			<p class="title">Tisualize <a class="black">simple sina weibo analysis for you.</a></p>
+            <div id="user_info">
+                Welcome <a href=http://t.sina.com.cn/$user_id class="red">$screen_name !</a>
+            </div>
+		</div>
+
+		<div id="form">
+			<form class="edit_input" method="get" action="analyze">
+				<p class="content">Enter a message id below :</p>
+				<input name="query" class="text" value="" type="text">
+				<input class="button" value="Analyze!" type="submit">
+			</form>
+            <div id="usage_info"><a class="black">To Gen[timeline|geo|transmission map]</a></div>
+		</div>
+        <p class="table-title">&gt;&gt; hot list and user timeline</p>
+        <div class="table-panel">
+     <table class="hot_list" cellspacing="0" cellpadding="0">
+     $code:
+        def limit(s,width=15):
+            if len(s) >= width:
+                return s[:width]+'...'
+            else :
+                return s
+    <tbody>
+        <tr>
+            <th width="120">mid</th>
+            <th width="120">user</th>
+            <th>content</th>
+            <th>from</th>
+            <th>date</th>
+            <th>rt</th>
+            <th>comm</th>
+        </tr>
+        $for name,mid,content,fromm,date,rt,comm in hot_list:
+        <tr>
+            <td>$mid</td>
+            <td>$name</td>
+            <td><div title="$content" class="content">$limit(content)</div></td>
+            <td>$fromm</td>
+            <td>$date</td>
+            <td>$rt</td>
+            <td>$comm</td>
+        </tr>
+       </tbody>
+    </table>
+    </div>
+	</div>
+	<div id="body">
+		<div id="reports"></div>
+	</div>
+
+	<div id="bottom">
+		<a class="white">by </a><a class="white" href="http://t.sina.com.cn/hewigovens">@hewigovens</a>
+	</div>
+	</center>
+</body>
+</html>
